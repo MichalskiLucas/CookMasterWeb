@@ -7,12 +7,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { HomeComponent } from './pages/home/home.component';
+import { IngredientComponent } from './pages/ingredient/ingredient.component';
+import { MatDividerModule } from '@angular/material/divider';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    HomeComponent
+    HomeComponent,
+    IngredientComponent
   ],
   providers: [],
   bootstrap: [AppComponent],
@@ -21,7 +24,8 @@ import { HomeComponent } from './pages/home/home.component';
     AppRoutingModule,
     HttpClientModule,
     MatToolbarModule,
-    MatButtonModule
+    MatButtonModule,
+    MatDividerModule
   ],
 })
 export class AppModule {}

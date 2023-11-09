@@ -1,0 +1,25 @@
+table {
+    width: 80%;
+    text-align: left;
+    margin-top: 20px;
+    border-collapse: separate;
+    border-spacing: 0 10px; 
+    padding-left: 20%;
+  }
+  
+  td {
+    padding: 10px;
+    border-bottom: 1px solid #ccc; 
+  }
+  
+  .buttonAprove {
+    background-color: green; 
+    color: white;
+    margin-right: 10px; 
+  }
+  
+  .buttonRecuse {
+    background-color: red; 
+    color: white;
+  }
+  

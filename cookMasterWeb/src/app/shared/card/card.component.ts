@@ -7,7 +7,7 @@ import { MatCardModule } from '@angular/material/card';
   standalone: true,
   imports: [CommonModule, MatCardModule],
   templateUrl: './card.component.html',
-  styleUrl: './card.component.scss'
+  styleUrls: ['./card.component.scss']
 })
 export class CardComponent {
   @Input() variant: 'primary' | 'secondary'= 'primary'

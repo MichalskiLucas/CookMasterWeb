@@ -7,19 +7,6 @@ import { Ingrediente } from '../../models/objetos/ingrediente.model';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit {
-  constructor(private ingredienteService: IngredienteService) {}
+export class HomeComponent  {
 
-  ngOnInit(): void {
-    this.ingredienteService.findAllIngredientes().subscribe({
-      next: (response: Ingrediente[]) => {
-        this.listaIngredientes = response;
-      },
-      error: (error: any) => {
-        console.log(error);
-      }
-    });
-  }
-
-  listaIngredientes: Ingrediente[] = [];
 }

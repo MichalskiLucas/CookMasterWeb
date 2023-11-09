@@ -14,7 +14,18 @@ export class IngredienteService {
   private apiUrl = environment.apiUrl;
 
   findAllIngredientes(): Observable<Ingrediente[]>{
-    const url = `${this.apiUrl}/ingrediente`;
+    const url = `${this.apiUrl}/ingrediente/findDisable`;
     return this.http.get<Ingrediente[]>(url);
   }
+
+  enableIngredient(ingredient: Ingrediente): Observable<Ingrediente> {
+    const url = `${this.apiUrl}/ingrediente`;
+    return this.http.put<Ingrediente>(url, ingredient);
+  } 
+
+  deleteIngredient(ingredient: Ingrediente) {
+    const url = `${this.apiUrl}/ingrediente/${ingredient.id}`;
+    return this.http.delete(url);
+  }
+
 }

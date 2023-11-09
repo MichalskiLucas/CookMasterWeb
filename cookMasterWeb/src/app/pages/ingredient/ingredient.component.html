@@ -1,0 +1,10 @@
+<table>
+    <tr *ngFor="let item of listaIngredientes; let last = last; let i = index">
+      <td>{{ item.descricao }}</td>
+      <td style="text-align: end;">
+        <button class="buttonAprove" mat-raised-button (click)="onClickEnable(item, i)">Aprovar</button>
+        <button class="buttonRecuse" mat-raised-button (click)="onClickDelete(item, i)">Recusar</button>
+      </td>
+    </tr>
+</table>
+  
