@@ -9,6 +9,10 @@ import { MatButtonModule } from '@angular/material/button';
 import { HomeComponent } from './pages/home/home.component';
 import { IngredientComponent } from './pages/ingredient/ingredient.component';
 import { MatDividerModule } from '@angular/material/divider';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -25,7 +29,14 @@ import { MatDividerModule } from '@angular/material/divider';
     HttpClientModule,
     MatToolbarModule,
     MatButtonModule,
-    MatDividerModule
+    MatDividerModule,
+    BrowserAnimationsModule,
+    FormsModule,
+    ToastrModule.forRoot({
+      timeOut: 4000,
+      progressAnimation: 'decreasing',
+      positionClass: 'tπ',
+    })
   ],
 })
 export class AppModule {}

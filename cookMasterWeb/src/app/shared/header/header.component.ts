@@ -17,4 +17,8 @@ export class HeaderComponent {
   toIngredientPage(){
     this.route.navigate(['/ingredientes']);
   }
+
+  toHomePage(){
+    this.route.navigate(['']);
+  }
 }

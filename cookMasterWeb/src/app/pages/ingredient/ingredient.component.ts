@@ -1,14 +1,17 @@
 import { Component } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { Ingrediente } from 'src/app/models/objetos/ingrediente.model';
 import { IngredienteService } from 'src/app/services/ingrediente.service';
 
 @Component({
   selector: 'app-ingredient',
   templateUrl: './ingredient.component.html',
-  styleUrls: ['./ingredient.component.scss']
+  styleUrls: ['./ingredient.component.scss',
+  "node_modules/ngx-toastr/toastr.scss"]
 })
 export class IngredientComponent {
-  constructor(private ingredienteService: IngredienteService) {}
+  constructor(private ingredienteService: IngredienteService,
+              private toastr: ToastrService) {}
 
   ngOnInit(): void {
     this.ingredienteService.findAllIngredientes().subscribe({
@@ -27,23 +30,28 @@ export class IngredientComponent {
     ingredient.ativo = true;
     this.ingredienteService.enableIngredient(ingredient).subscribe({
       next: () => {
-        console.log('Atualizado');
+        this.toastr.success("Ingrediente aceito!", "Sucesso");
         this.listaIngredientes.splice(index, 1);
       },
       error: (error: any) => {
-        console.log(error);
+        this.toastr.error(error, "Erro");
       }
     });
   }
 
   onClickDelete(ingredient: Ingrediente, index: number){
+    this.toastr.success("Ingrediente recusado!", "Ingredientes");
+    this.toastr.warning("warn", "Ingredientes");
+    this.toastr.error("error!", "Ingredientes");
+    this.toastr.info("info!", "Ingredientes");
+return;
     this.ingredienteService.deleteIngredient(ingredient).subscribe({
       next: () => {
-        console.log('Deletado');
         this.listaIngredientes.splice(index, 1);
+        this.toastr.success("Ingrediente recusado!", "Ingredientes");
       },
       error: (error: any) => {
-        console.log(error);
+        this.toastr.error(error, "Erro");
       }
     });
   }

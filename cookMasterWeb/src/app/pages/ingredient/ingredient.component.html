@@ -1,4 +1,5 @@
-<table>
+<div *ngIf="listaIngredientes.length > 0; else listaVazia">
+  <table>
     <tr *ngFor="let item of listaIngredientes; let last = last; let i = index">
       <td>{{ item.descricao }}</td>
       <td style="text-align: end;">
@@ -6,5 +7,12 @@
         <button class="buttonRecuse" mat-raised-button (click)="onClickDelete(item, i)">Recusar</button>
       </td>
     </tr>
-</table>
-  
+  </table>
+</div>
+
+<ng-template #listaVazia>
+  <div class="listaVazia">
+    <img class="imagemOpaca" src="assets/images/IconCookMaster.png" alt="">
+    <h2>Não existem ingredientes pendentes</h2>
+  </div>
+</ng-template>
