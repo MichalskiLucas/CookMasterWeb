@@ -35,7 +35,7 @@ import { FormsModule } from '@angular/forms';
     ToastrModule.forRoot({
       timeOut: 4000,
       progressAnimation: 'decreasing',
-      positionClass: 'tπ',
+      positionClass: 'toast-bottom-rightç',
     })
   ],
 })
