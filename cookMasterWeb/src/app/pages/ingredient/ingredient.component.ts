@@ -40,11 +40,6 @@ export class IngredientComponent {
   }
 
   onClickDelete(ingredient: Ingrediente, index: number){
-    this.toastr.success("Ingrediente recusado!", "Ingredientes");
-    this.toastr.warning("warn", "Ingredientes");
-    this.toastr.error("error!", "Ingredientes");
-    this.toastr.info("info!", "Ingredientes");
-return;
     this.ingredienteService.deleteIngredient(ingredient).subscribe({
       next: () => {
         this.listaIngredientes.splice(index, 1);
